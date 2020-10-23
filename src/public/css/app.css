@@ -1,0 +1,451 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif; }
+
+nav {
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  min-height: 8vh;
+  z-index: 3; }
+
+.smart-scroll {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0; }
+
+.scrolled-down {
+  transform: translateY(-100%);
+  transition: all 0.3s ease-in-out; }
+
+.scrolled-up {
+  transform: translateY(0);
+  transition: all 0.3s ease-in-out; }
+
+.logo a {
+  text-decoration: none; }
+
+.logo li {
+  list-style: none;
+  float: left; }
+
+.logo img {
+  vertical-align: middle;
+  width: 75px; }
+
+.logo span {
+  vertical-align: middle;
+  color: #f48f3f;
+  align-items: center;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  margin: 0;
+  font-size: 30px; }
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 35%;
+  margin: 0;
+  list-style: none; }
+
+.nav-links li a {
+  font-size: 18px;
+  color: #000000; }
+
+.nav-links .nav-links__buttonBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+.nav-links #btnLogin {
+  cursor: pointer;
+  outline: none;
+  background-image: linear-gradient(#ee613c, #fecc10);
+  border-radius: 3px;
+  border: none;
+  color: white;
+  padding: 8px 10px; }
+
+.nav-links #btnRegister {
+  cursor: pointer;
+  outline: none;
+  background-color: white;
+  border-radius: 3px;
+  border: solid 2px #f48f3f;
+  color: #f48f3f;
+  padding: 6px 16px;
+  margin-left: 5px; }
+
+.nav-links button:hover {
+  box-shadow: #707070 1px 1px 5px; }
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px; }
+
+.toggleButton div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  transition: all 0.5s ease; }
+
+.toggleButton {
+  display: none;
+  cursor: pointer; }
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden; }
+  nav {
+    background-color: #000000; }
+  .nav-links {
+    position: absolute;
+    right: 0;
+    height: 92vh;
+    top: 8vh;
+    color: white;
+    background-color: black;
+    display: flex;
+    z-index: 10;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in; }
+  .toggleButton {
+    display: block; }
+  .nav-links li a {
+    color: white; }
+  .containerForm {
+    flex-direction: column;
+    float: bot; }
+  .loginInfomationBox,
+  .imageBox {
+    width: 100%; }
+  .nav-links button {
+    width: 100%; } }
+
+@media screen and (max-width: 1024px) {
+  .nav-links {
+    width: 60%; } }
+
+.nav-active {
+  transform: translateX(0%);
+  width: 60%; }
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px); }
+
+.toggle .line2 {
+  opacity: 0; }
+
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px); }
+
+.modal {
+  position: absolute;
+  visibility: hidden;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+  display: flex; }
+
+.modal-active {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  visibility: visible; }
+
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2); }
+
+.modal__body {
+  margin: auto; }
+
+.body_container {
+  margin-top: 50px;
+  height: 1000px; }
+
+.loginFormPopup {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+  background-color: white;
+  visibility: hidden;
+  opacity: 0;
+  max-height: 100%;
+  overflow-y: auto;
+  transition: 0.5s; }
+
+.registrationFormPopup {
+  position: fixed;
+  border-radius: 5px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  padding: 20px 20px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+  background-color: white;
+  visibility: hidden;
+  opacity: 0;
+  max-height: 100%;
+  overflow-y: auto;
+  transition: 0.5s; }
+
+.loginFormPopup-active,
+.registrationFormPopup-active {
+  height: auto;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s;
+  z-index: 1; }
+
+.btnClose span {
+  float: right;
+  cursor: pointer; }
+
+.btnClose span:hover {
+  color: red; }
+
+.titleBox span {
+  padding: 0 20px;
+  color: #f48f3f; }
+
+.btnCloseRegistration {
+  width: 100%; }
+
+.btnCloseRegistration span {
+  float: right;
+  cursor: pointer; }
+
+.btnCloseRegistration span:hover {
+  color: red; }
+
+.containerForm-inputBox {
+  display: flex;
+  flex-direction: row; }
+
+.form-control {
+  position: relative;
+  width: 100%;
+  height: 77px; }
+
+.imageBox,
+.loginInfomationBox,
+.colunm1,
+.colunm2 {
+  float: left;
+  padding: 10px 20px;
+  width: 50%; }
+
+.imageBox img {
+  width: 100%; }
+
+.login__form-control {
+  position: relative;
+  height: 52px; }
+
+.infomation input {
+  width: 100%;
+  padding: 3px 30px;
+  outline: none;
+  font-size: 14px;
+  border: none;
+  border-bottom: solid 2px #f48f3f; }
+
+.login__form-control #toggle_password {
+  position: absolute;
+  top: 7px;
+  right: 5px;
+  color: #f48f3f; }
+
+.login__form-control .input_icon {
+  position: absolute;
+  top: 7px;
+  left: 10px;
+  color: #f48f3f; }
+
+.btnLoginValidatte {
+  width: 100%; }
+
+#btnLoginValidate {
+  border-radius: 3px;
+  position: relative;
+  padding: 8px 30px;
+  font-size: 15px;
+  background-color: #f48f3f;
+  border: none;
+  color: white; }
+
+#btnLoginValidate:hover {
+  cursor: pointer;
+  box-shadow: #707070 1px 1px 5px; }
+
+.supportLogin {
+  padding: 10px 0; }
+
+.supportLogin span {
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  color: black;
+  margin-top: 15px; }
+
+.supportLogin span:hover {
+  color: #f48f3f; }
+
+.LoginWithOrther {
+  margin-top: 20px;
+  padding: 10px 0px 0px 0px;
+  border-top: solid 1px #bbbbbb;
+  display: flex;
+  justify-content: space-between;
+  width: 100%; }
+
+.LoginWithOrther a {
+  border-radius: 3px;
+  flex-basis: 48%;
+  text-align: center;
+  font-size: 12px;
+  text-decoration: none;
+  padding: 5px 10px;
+  color: white; }
+
+.LoginWithOrther span {
+  font-size: 12px; }
+
+.LoginWithOrther #btnFacebook {
+  background-color: #3b5998; }
+
+.LoginWithOrther #btnGoogle {
+  background-color: #DB4437; }
+
+.LoginWithOrther a:hover {
+  box-shadow: #707070 1px 1px 5px; }
+
+.registrationInfomationBox input[type='text'],
+.registrationInfomationBox input[type='date'],
+.registrationInfomationBox input[type='password'],
+.registrationInfomationBox select {
+  width: 100%;
+  padding: 5px 10px;
+  outline-color: #f48f3f;
+  border: solid 1px black;
+  border-radius: 3px; }
+
+.registrationInfomationBox input[type='password'] {
+  padding: 5px 25px 5px 10px; }
+
+.form-control #toggle_password {
+  position: absolute;
+  top: 32px;
+  right: 5px;
+  color: black; }
+
+.colunm1 span {
+  color: #f48f3f; }
+
+.buttonBox {
+  width: 100%;
+  height: 100%;
+  padding: 0 20px; }
+
+.buttonBox {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap-reverse; }
+
+.registrationInfomationBox input[type='submit'] {
+  padding: 8px 20px;
+  border-radius: 3px;
+  color: white;
+  border: solid 2px #f48f3f;
+  background-color: #f48f3f;
+  margin-top: 5px;
+  outline: none;
+  cursor: pointer; }
+
+.buttonBox span {
+  padding: 8px 10px;
+  border-radius: 3px;
+  color: #f48f3f;
+  border: solid 2px #f48f3f;
+  background-color: white;
+  font-size: 13px;
+  outline: none;
+  text-align: center;
+  margin-top: 5px;
+  margin-right: 20px;
+  cursor: pointer; }
+
+small {
+  font-size: 12px;
+  color: green; }
+
+.invalid small {
+  color: red; }
+
+.invalid input {
+  background-color: #ffe0e0; }
+
+.registrationInfomationBox input[type='submit']:hover {
+  box-shadow: #707070 1px 1px 5px; }
+
+.buttonBox span:hover {
+  box-shadow: #707070 1px 1px 5px; }
+
+@media screen and (max-width: 768px) {
+  .containerForm,
+  .containerForm-inputBox {
+    flex-direction: column; }
+  .colunm1,
+  .colunm2,
+  .buttonBox {
+    padding: 0;
+    width: 100%;
+    margin: 0px; }
+  .buttonBox span,
+  .buttonBox input {
+    width: 100%; }
+  .loginInfomationBox,
+  .imageBox {
+    width: 100%; }
+  .imageBox img {
+    width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+  .loginInfomationBox input[type='text'],
+  .loginInfomationBox input[type='password'],
+  .loginInfomationBox input[type='submit'] {
+    width: 100%; }
+  .loginFormPopup,
+  .registrationFormPopup {
+    width: 90%; }
+  .buttonBox span {
+    margin-right: 0; } }
+
+footer {
+  background-color: #DB4437; }

@@ -1,0 +1,167 @@
+<nav class="navbar smart-scroll">
+    <div class="logo">
+        <a href="/">
+            <ul>
+                <li><img src="/images/mycvlogo.png" alt="MyCV_logo"></li>
+                <li><span>MyPM</span></li>
+            </ul>
+        </a>
+    </div>
+
+    <ul class="nav-links" id="nav-links">
+        <li><a href="#">Giới thiệu</a></li>
+        <li><a href="#">Diễn đàn</a></li>
+        <li><a href="#">Liên hệ</a></li>
+        <li>
+            <div class="nav-links__buttonBox">
+                <button class="btnLogin" id="btnLogin">Đăng nhập</button>
+                <button class="btnRegister" id="btnRegister">Đăng kí</button>
+            </div>
+        </li>
+    </ul>
+    {{!-- <ul class="nav__mobile-links" id="nav__mobile-links">
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Notification</a></li>
+        <li><button class="btnLogin" id="btnLogin">Login</button></li>
+    </ul> --}}
+
+    <div class="toggleButton" id="toggleButton">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
+</nav>
+
+{{!-- modal layout --}}
+<div class="modal">
+    <div class="modal__overlay"></div>
+    <div class="modal__body">
+        <div class="modal__inner">
+            <div class="loginFormPopup">
+                <div class="btnClose">
+                    <span id="btnClose"><i class="fas fa-times"></i></span>
+                </div>
+                <div class="containerForm">
+                    <div class="imageBox">
+                        <img src="/images/login_image.png" alt="">
+                    </div>
+                    <form class="loginInfomationBox" id="loginInfomationBox" method="POST" action="">
+                        <div class="infomation">
+                            <div class="login__form-control">
+                                <span class="input_icon fas fa-user"></span>
+                                <input type="text" name="login_email" id="login_email" placeholder="Email" required><br>
+                                <small></small>
+                            </div>
+                            <div class="login__form-control">
+                                <span class="input_icon fas fa-lock"></span>
+                                <input type="password" name="login_password" id="login_password" placeholder="Mật khẩu" required>
+                                <i class="fas fa-eye-slash toggle_password" id="toggle_password" onclick="TogglePassword(login_password)"></i><br>
+                                <small></small>
+                            </div>
+                        </div>
+
+                        <div class="btnLoginValidatte">
+                            <input type="submit" name="btnLoginValidate" id="btnLoginValidate" value="Đăng nhập">
+                        </div>
+                        
+                        <div class="supportLogin">
+                            <span>Quên mật khẩu?</span><br>
+                            <span id="createAccount">Tạo tài khoản!</span>
+                        </div>
+                        
+                        <div class="LoginWithOrther">
+                            <a href="#" id="btnFacebook"><i class="fab fa-facebook-f"></i> | Facebook</a>
+                            <a href="#" id="btnGoogle"><i class="fab fa-google"></i> | Google</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal">
+    <div class="modal__overlay"></div>
+    <div class="modal__body">
+        <div class="modal__inner">
+            <div class="registrationFormPopup">
+                <div class="btnCloseRegistration">
+                    <span id="btnCloseRegistration"><i class="fas fa-times"></i></span>
+                </div>
+                <div class="titleBox">
+                    <span><i class="fas fa-user-plus"></i> Đăng kí</span>
+                </div>
+                <div class="containerForm">
+                    <form class="registrationInfomationBox" id="registrationInfomationBox" method="POST" action="/create-account" autocomplete="off">
+                        <div class="containerForm-inputBox">
+                            <div class="colunm1">
+                                <div class="form-control">
+                                    <label for="user_Name">Họ và tên</label>
+                                    <input type="text" name="user_Name" id="user_Name" required>
+                                    <small></small>
+                                </div>
+                                <div class="form-control">
+                                    <label for="gender">Giới tính</label><br>
+                                    <input type="radio" name="gender" id="male" value="1" required>
+                                    <label for="male">Nam</label>
+                                    <input type="radio" name="gender" id="female" value="0" required>
+                                    <label for="female">Nữ</label><br>
+                                    <small></small>
+                                </div>
+
+                                <div class="form-control">
+                                    <label for="dateOfBirth">Ngày sinh</label>
+                                    <input type="date" name="dateOfBirth" id="dateOfBirth" required>
+                                    <small></small>
+                                </div>
+
+                                <div class="form-control">
+                                    <label for="cellphone">Số điện thoại</label>
+                                    <input type="text" name="cellphone" id="cellphone" required>
+                                    <small></small>
+                                </div>
+                            </div>
+                            <div class="colunm2">
+                                <div class="form-control">
+                                    <label for="specialization">Chuyên ngành</label>
+                                    <select name="specialization" id="specialization" required>
+                                        <option value="0">-- Select one --</option>
+                                        <option value="1">Computer Science</option>
+                                        <option value="2">Economics and industry</option>
+                                        <option value="3">Linguistics</option>
+                                        <option value="4">Organizations</option>
+                                    </select>
+                                    <small></small>
+                                </div>
+
+                                <div class="form-control">
+                                    <label for="register__email">Email</label>
+                                    <input type="text" name="register__email" id="register__email" required>
+                                    <small></small>
+                                </div>
+
+                                <div class="form-control">
+                                    <label for="pass">Mật khẩu</label>
+                                    <input type="password" name="pass" id="pass" required>
+                                    <i class="fas fa-eye-slash toggle_password" id="toggle_password" onclick="TogglePassword(pass)"></i><br>
+                                    <small></small>
+                                </div>
+
+                                <div class="form-control">
+                                    <label for="confirm_password">Xác nhận mật khẩu</label>
+                                    <input type="password" name="confirm_password" id="confirm_password" required>
+                                    <small></small>
+                                </div>
+                                {{!-- <span id='message'></span> --}}
+                            </div>
+                        </div>
+                        <div class="buttonBox">
+                            <span id="backToLogin">Trở lại đăng nhập</span>
+                            <input type="submit" id="btnRegistration" value="Đăng kí">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
