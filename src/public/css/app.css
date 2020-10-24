@@ -30,24 +30,19 @@ nav {
   transition: all 0.3s ease-in-out; }
 
 .logo a {
+  display: flex;
+  align-items: flex-end;
   text-decoration: none; }
 
-.logo li {
-  list-style: none;
-  float: left; }
-
 .logo img {
-  vertical-align: middle;
-  width: 75px; }
+  width: 50px; }
 
 .logo span {
-  vertical-align: middle;
   color: #f48f3f;
-  align-items: center;
   text-transform: capitalize;
   letter-spacing: 1px;
-  margin: 0;
-  font-size: 30px; }
+  margin: 0 0 0 10px;
+  font-size: 24px; }
 
 .nav-links {
   display: flex;
