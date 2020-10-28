@@ -29,24 +29,23 @@ class UserHomeController{
     }
 
     CreateAccount(request, response, next) {
-        response.json(request.body);
-        // console.log(request.body);
+            const user = new User({
+                user_Name: request.body.user_Name,
+                gender: request.body.gender,
+                dateOfBirth: request.body.dateOfBirth,
+                cellphone: request.body.cellphone,
+                specialization: request.body.specialization,
+                register_email: request.body.register__email,
+                password: crypto.createHash('sha256').update("request.body.pass").digest('hex')
+            });
 
-        // try {
-        //     const user = new User({
-        //         user_Name: request.body.user_Name,
-        //         gender: request.body.gender,
-        //         dateOfBirth: request.body.dateOfBirth,
-        //         cellphone: request.body.cellphone,
-        //         specialization: request.body.specialization,
-        //         email: request.body.email,
-        //         password: crypto.createHash('sha256').update(request.body.pass).digest('hex')
-        //     });
-        //     // user.save();
-        //     response.render('userHome');
-        // } catch (error) {
-        //     console.log("error create user: " + error);
-        // }
+            user.save()
+                .then(() => {
+                    response.redirect('/');
+                })
+                .catch(error => {
+                    console.log(error);
+                })
     }
 }
 
