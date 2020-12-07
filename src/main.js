@@ -2,10 +2,17 @@ const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
 const handlebars  = require('express-handlebars');
+const session = require('express-session');
 
 const port = 3000;
 // Khai bao controller
 const app = express();
+// Khai báo sử dụng express session
+app.use(session({
+    resave: true, 
+    saveUninitialized: false, 
+    secret: 'muSecretKey', 
+    cookie: { maxAge: 60000 }}));
 
 // Khai bao route
 const route = require('./routes/indexRouter');

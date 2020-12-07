@@ -7,5 +7,7 @@ const userHomeController = require('../../app/controllers/user/UserHomeControlle
 
 router.get('/', userHomeController.GetHome);
 router.post('/create-account', userHomeController.CreateAccount);
+router.get('/forum', userHomeController.GetForumPage);
+router.post('/login', userHomeController.ValidateLogin);
 
 module.exports = router;

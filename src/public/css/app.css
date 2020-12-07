@@ -8,6 +8,7 @@ nav {
   top: 0;
   right: 0;
   left: 0;
+  height: 10vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -52,14 +53,72 @@ nav {
   margin: 0;
   list-style: none; }
 
+.nav_before-login,
+.nav_after-login {
+  display: none; }
+
+.nav_before-login_active,
+.nav_after-login_active {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 35%;
+  margin: 0;
+  list-style: none; }
+
 .nav-links li a {
   font-size: 18px;
   color: #000000; }
+
+.nav-links li a:hover {
+  color: #f48f3f; }
 
 .nav-links .nav-links__buttonBox {
   display: flex;
   flex-direction: row;
   justify-content: space-between; }
+
+.nav-links .nav-links__iconBox a {
+  padding: 0 10px 0 10px; }
+
+.nav-links .nav-links__seflBox {
+  padding: 2px 2px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer; }
+
+.nav-links .dropdown_content {
+  display: none;
+  min-width: 200px;
+  padding: 10px 0;
+  position: absolute;
+  box-shadow: #929292 2px 2px 5px; }
+
+.nav-links .dropdown_content li {
+  list-style: none;
+  padding: 5px 20px; }
+
+.nav-links .dropdown_content li i {
+  width: 20px;
+  align-self: center; }
+
+.nav-links .dropdown_content li:hover {
+  background-color: #f48f3f; }
+
+.nav-links .dropdown_content li:hover a {
+  color: #fff; }
+
+.seflBox:hover .dropdown_content {
+  display: block; }
+
+.nav-links .nav-links__seflBox .user_avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; }
+
+.nav-links .nav-links__seflBox .user_fullname {
+  padding: 5px 10px; }
 
 .nav-links #btnLogin {
   cursor: pointer;
@@ -104,11 +163,12 @@ nav {
     overflow-x: hidden; }
   nav {
     background-color: #000000; }
-  .nav-links {
+  .nav_after-login_active,
+  .nav_before-login_active {
     position: absolute;
     right: 0;
-    height: 92vh;
-    top: 8vh;
+    height: 100vh;
+    top: 10vh;
     color: white;
     background-color: black;
     display: flex;
@@ -131,7 +191,8 @@ nav {
     width: 100%; } }
 
 @media screen and (max-width: 1024px) {
-  .nav-links {
+  .nav_after-login_active,
+  .nav_before-login_active {
     width: 60%; } }
 
 .nav-active {
@@ -176,7 +237,6 @@ nav {
   margin: auto; }
 
 .body_container {
-  margin-top: 50px;
   height: 1000px; }
 
 .loginFormPopup {

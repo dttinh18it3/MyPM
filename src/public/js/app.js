@@ -2,19 +2,18 @@
 
 const navSlide = () => {
     const toggleButton = document.querySelector('.toggleButton');
-    const nav_links = document.querySelector('.nav-links');
+    const nav_links_after_login = document.querySelector('.nav_after-login_active');
+    const nav_links_before_login = document.querySelector('.nav_before-login_active');
     const navLinks = document.querySelectorAll('.nav-links li');
 
     function NavigationResponsive() {
-        nav_links.classList.toggle('nav-active');
-        // navLinks.forEach((link, index) => {
-        //     if(link.style.animation) {
-        //         link.style.animation = '';
-        //     } else {
-        //         link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
-        //     }
-        // });
         toggleButton.classList.toggle('toggle');
+        if(nav_links_before_login) {
+            nav_links_before_login.classList.toggle('nav-active');
+        }
+        if(nav_links_after_login) {
+            nav_links_after_login.classList.toggle('nav-active');
+        }
     }
 
     toggleButton.addEventListener('click', () => {
@@ -115,6 +114,7 @@ function CheckDoB(dateOfBirth) {
     return (dateRegex.test(dateOfBirth)) ? true : false;
 }
 function CheckCellphone(cellphone) {
+    // chua dung
     var cellphoneRegex = /\d{10}/;
     return (cellphoneRegex.test(cellphone)) ? true : false;
 }
@@ -148,9 +148,9 @@ function setSuccessInput(input, message) {
 
 function LoginCheckInput(){
     const loginForm = document.getElementById("loginInfomationBox");
-    loginForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-    });
+    // loginForm.addEventListener('submit', (e) => {
+    //     e.preventDefault();
+    // });
     const login_email = document.getElementById("login_email");
     const login_password = document.getElementById("login_password");
     login_email.onblur = function() {
@@ -277,12 +277,12 @@ function CheckInputEmpty() {
         var pass_value = $("#pass").val().trim();
         var confirm_password_value = $("#confirm_password").val();
 
-        console.log(" 1 " + CheckUserName(user_Name_value))
-        console.log(" 2 " + CheckDoB(dateOfBirth_value))
-        console.log(" 3 " + CheckCellphone(cellphone_value))
-        console.log(" 4 " + CheckSpecialization(specialization_value))
-        console.log(" 5 " + CheckEmail(register__email_value))
-        console.log(" 6 " + CheckPassword(pass_value))
+        // console.log(" 1 " + CheckUserName(user_Name_value))
+        // console.log(" 2 " + CheckDoB(dateOfBirth_value))
+        // console.log(" 3 " + CheckCellphone(cellphone_value))
+        // console.log(" 4 " + CheckSpecialization(specialization_value))
+        // console.log(" 5 " + CheckEmail(register__email_value))
+        // console.log(" 6 " + CheckPassword(pass_value))
 
         if(CheckUserName(user_Name_value) == false || CheckDoB(dateOfBirth_value) == false || CheckCellphone(cellphone_value) == false
             || CheckSpecialization(specialization_value) == false || CheckEmail(register__email_value) == false

@@ -6,9 +6,9 @@
         </a>
     </div>
 
-    <ul class="nav-links" id="nav-links">
+    <ul class="nav-links nav_before-login_active" id="nav-links">
         <li><a href="#">Giới thiệu</a></li>
-        <li><a href="#">Diễn đàn</a></li>
+        <li><a href="/forum">Diễn đàn</a></li>
         <li><a href="#">Liên hệ</a></li>
         <li>
             <div class="nav-links__buttonBox">
@@ -17,12 +17,39 @@
             </div>
         </li>
     </ul>
-    {{!-- <ul class="nav__mobile-links" id="nav__mobile-links">
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Notification</a></li>
-        <li><button class="btnLogin" id="btnLogin">Login</button></li>
-    </ul> --}}
+
+    <ul class="nav-links nav_after-login" id="nav-links">
+        <li><a href="#">Quản lý dự án</a></li>
+        <li><a href="/forum">Diễn đàn</a></li>
+        <li><a href="#">Liên hệ</a></li>
+        
+        
+        <li>
+            <div class="nav-links__iconBox">
+                <a href="#"><i class="fas fa-comments" title="Tin nhắn"></i></a>
+                <a href="#"><i class="fas fa-bell" title="Thông báo"></i></a>
+            </div>
+        </li>
+        <li>
+            <div class="seflBox">
+                <div class="nav-links__seflBox">
+                    <img src="images/captainamerica.jpg" class="user_avatar" alt="ảnh đại diện">
+                    <span class="user_fullname">Đỗ Tấn Tĩnh</span>
+                </div>
+
+                <div class="dropdown_content">
+                    <ul>
+                        <li><a href="#"><i class="fas fa-address-card"></i> Hồ sơ cá nhân</a></li>
+                        <li><a href="#"><i class="fas fa-wrench"></i> Cài đặt chung</a></li>
+                        <li><a href="#"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a></li>
+                    </ul>
+                </div>
+            </div>
+        </li>
+        <li><a href="#"><i class="fas fa-sign-out-alt" title="Đăng xuất"></i></a></li>
+    </ul>
+    
+
 
     <div class="toggleButton" id="toggleButton">
         <div class="line1"></div>
@@ -44,7 +71,7 @@
                     <div class="imageBox">
                         <img src="/images/login_image.png" alt="">
                     </div>
-                    <form class="loginInfomationBox" id="loginInfomationBox" method="POST" action="">
+                    <form class="loginInfomationBox" id="loginInfomationBox" method="POST" action="/login">
                         <div class="infomation">
                             <div class="login__form-control">
                                 <span class="input_icon fas fa-user"></span>

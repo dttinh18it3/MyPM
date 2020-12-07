@@ -7,7 +7,7 @@ const userSchema = new Schema({
     dateOfBirth: { type: Date, required: true },
     cellphone: { type: String, required: true },
     specialization: { type: String, required: true },
-    register_email: { type: String, required: true },
+    email: { type: String, required: true },
     password: { type: String, required: true},
 }, {
     timestamps: true

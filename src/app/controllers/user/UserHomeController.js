@@ -35,8 +35,8 @@ class UserHomeController{
                 dateOfBirth: request.body.dateOfBirth,
                 cellphone: request.body.cellphone,
                 specialization: request.body.specialization,
-                register_email: request.body.register__email,
-                password: crypto.createHash('sha256').update("request.body.pass").digest('hex')
+                email: request.body.register__email,
+                password: crypto.createHash('sha256').update(request.body.pass).digest('hex')
             });
 
             user.save()
@@ -46,6 +46,18 @@ class UserHomeController{
                 .catch(error => {
                     console.log(error);
                 })
+    }
+
+    ValidateLogin(request, response, next) {
+        User.findOne({ email: request.body.login_email } && { password: crypto.createHash('sha256').update(request.body.login_password).digest('hex')})
+            .then((user) => {
+                response.json(user);
+            })
+            .catch(next);
+    }
+
+    GetForumPage(request, response) {
+        response.send('forum page here!!!!')
     }
 }
 
