@@ -49,7 +49,53 @@
         <li><a href="#"><i class="fas fa-sign-out-alt" title="Đăng xuất"></i></a></li>
     </ul>
     
-<p>sy</p>
+{{!-- modal layout --}}
+<div class="modal">
+    <div class="modal__overlay"></div>
+    <div class="modal__body">
+        <div class="modal__inner">
+            <div class="loginFormPopup">
+                <div class="btnClose">
+                    <span id="btnClose"><i class="fas fa-times"></i></span>
+                </div>
+                <div class="containerForm">
+                    <div class="imageBox">
+                        <img src="/images/login_image.png" alt="">
+                    </div>
+                    <form class="loginInfomationBox" id="loginInfomationBox" method="POST" action="/login">
+                        <div class="infomation">
+                            <div class="login__form-control">
+                                <span class="input_icon fas fa-user"></span>
+                                <input type="text" name="login_email" id="login_email" placeholder="Email" required><br>
+                                <small></small>
+                            </div>
+                            <div class="login__form-control">
+                                <span class="input_icon fas fa-lock"></span>
+                                <input type="password" name="login_password" id="login_password" placeholder="Mật khẩu" required>
+                                <i class="fas fa-eye-slash toggle_password" id="toggle_password" onclick="TogglePassword(login_password)"></i><br>
+                                <small></small>
+                            </div>
+                        </div>
+
+                        <div class="btnLoginValidatte">
+                            <input type="submit" name="btnLoginValidate" id="btnLoginValidate" value="Đăng nhập">
+                        </div>
+                        
+                        <div class="supportLogin">
+                            <span>Quên mật khẩu?</span><br>
+                            <span id="createAccount">Tạo tài khoản!</span>
+                        </div>
+                        
+                        <div class="LoginWithOrther">
+                            <a href="#" id="btnFacebook"><i class="fab fa-facebook-f"></i> | Facebook</a>
+                            <a href="#" id="btnGoogle"><i class="fab fa-google"></i> | Google</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
     <div class="toggleButton" id="toggleButton">
         <div class="line1"></div>
