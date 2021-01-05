@@ -9,10 +9,9 @@ const port = 3000;
 const app = express();
 // Khai báo sử dụng express session
 app.use(session({
-    resave: true, 
-    saveUninitialized: false, 
-    secret: 'muSecretKey', 
-    cookie: { maxAge: 60000 }}));
+    secret: 'secret-key',
+    resave: true,
+    saveUninitialized: false}));
 
 // Khai bao route
 const route = require('./routes/indexRouter');

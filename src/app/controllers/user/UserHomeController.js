@@ -1,31 +1,16 @@
 const crypto = require('crypto');
 const User = require('../../models/User');
+const Project = require('../../models/Project');
 const { json } = require('express');
 
 class UserHomeController{
     
     GetHome(request, response) {
-        response.render('userHome');
+        if(request.session.user_session) {
+            response.render('userHome', {user: request.session.user_session});
+        } else response.render('userHome');
 
-        // try {
-        //     const user = new User({
-        //         user_Name: 'ABC',
-        //         dateOfBirth: '2020-02-01',
-        //         gender: 1,
-        //         cellphone: '0123456789',
-        //         email: 'user@gmail.com',
-        //         password: crypto.createHash('sha256').update('password').digest('hex'),
-        //     });
-        //     user.save().then(() => console.log('save successfully'));
-        //     response.render('userHome');
-        // } catch (error) {
-        //     console.log("error create user: " + error);
-        // }
-
-        // User.find({}, function(error, users) {
-        //     if (!error) response.json(users);
-        //     response.status(400).json({ error: 'ERROR find users!!!' });
-        // });
+        
     }
 
     CreateAccount(request, response, next) {
@@ -47,17 +32,40 @@ class UserHomeController{
                     console.log(error);
                 })
     }
-
     ValidateLogin(request, response, next) {
         User.findOne({ email: request.body.login_email } && { password: crypto.createHash('sha256').update(request.body.login_password).digest('hex')})
             .then((user) => {
-                response.json(user);
+                request.session.user_session = user;
+                // response.render("userHome", { user });
+                response.redirect("/");
             })
             .catch(next);
     }
 
+    LogoutAccount(request, response, next) {
+        delete request.session.user_session;
+        response.redirect('/');
+    }
+
+    
+    
+    
+
     GetForumPage(request, response) {
         response.send('forum page here!!!!')
+    }
+    showUserProfile(request, response) {
+        response.send('profile page here!!!!')
+    }
+    showProjectManagement(request, response) {
+        response.render('userProjectManagement',{user: request.session.user_session})
+    }
+
+    CreateProject(request, response, next){
+        response.render("userCreate",{user: request.session.user_session});
+    }
+    PostCreateProject(request, response){
+        response.json(request.body);
     }
 }
 

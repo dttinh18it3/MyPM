@@ -63,7 +63,6 @@ const navSlide = () => {
     });
 
 
-
     ScrollNavigation();
     LoginCheckInput();
     CheckInputEmpty();
@@ -86,6 +85,7 @@ function ScrollNavigation() {
         });
     }
 }
+
 
 function TogglePassword(input) {
     const form_control = input.parentElement;
@@ -302,5 +302,6 @@ function CheckInputEmpty() {
                 // });
             }
     }
+
 }
 navSlide();

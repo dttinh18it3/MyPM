@@ -1,6 +1,6 @@
 class UserProfileController {
     GetProfile(request, response) {
-        response.render('userProfile');
+        response.render('userProfile',{user: request.session.user_session});
     }
 }
 
