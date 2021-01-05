@@ -103,3 +103,93 @@
         <div class="line3"></div>
     </div>
 </nav>
+<<<<<<< HEAD
+
+// vu
+<div class="modal">
+    <div class="modal__overlay"></div>
+    <div class="modal__body">
+        <div class="modal__inner">
+            <div class="registrationFormPopup">
+                <div class="btnCloseRegistration">
+                    <span id="btnCloseRegistration"><i class="fas fa-times"></i></span>
+                </div>
+                <div class="titleBox">
+                    <span><i class="fas fa-user-plus"></i> Đăng kí</span>
+                </div>
+                <div class="containerForm">
+                    <form class="registrationInfomationBox" id="registrationInfomationBox" method="POST" action="/create-account" autocomplete="off">
+                        <div class="containerForm-inputBox">
+                            <div class="colunm1">
+                                <div class="form-control">
+                                    <label for="user_Name">Họ và tên</label>
+                                    <input type="text" name="user_Name" id="user_Name" required>
+                                    <small></small>
+                                </div>
+                                <div class="form-control">
+                                    <label for="gender">Giới tính</label><br>
+                                    <input type="radio" name="gender" id="male" value="1" required>
+                                    <label for="male">Nam</label>
+                                    <input type="radio" name="gender" id="female" value="0" required>
+                                    <label for="female">Nữ</label><br>
+                                    <small></small>
+                                </div>
+
+                                <div class="form-control">
+                                    <label for="dateOfBirth">Ngày sinh</label>
+                                    <input type="date" name="dateOfBirth" id="dateOfBirth" required>
+                                    <small></small>
+                                </div>
+
+                                <div class="form-control">
+                                    <label for="cellphone">Số điện thoại</label>
+                                    <input type="text" name="cellphone" id="cellphone" required>
+                                    <small></small>
+                                </div>
+                            </div>
+                            <div class="colunm2">
+                                <div class="form-control">
+                                    <label for="specialization">Chuyên ngành</label>
+                                    <select name="specialization" id="specialization" required>
+                                        <option value="0">-- Select one --</option>
+                                        <option value="1">Computer Science</option>
+                                        <option value="2">Economics and industry</option>
+                                        <option value="3">Linguistics</option>
+                                        <option value="4">Organizations</option>
+                                    </select>
+                                    <small></small>
+                                </div>
+
+                                <div class="form-control">
+                                    <label for="register__email">Email</label>
+                                    <input type="text" name="register__email" id="register__email" required>
+                                    <small></small>
+                                </div>
+
+                                <div class="form-control">
+                                    <label for="pass">Mật khẩu</label>
+                                    <input type="password" name="pass" id="pass" required>
+                                    <i class="fas fa-eye-slash toggle_password" id="toggle_password" onclick="TogglePassword(pass)"></i><br>
+                                    <small></small>
+                                </div>
+
+                                <div class="form-control">
+                                    <label for="confirm_password">Xác nhận mật khẩu</label>
+                                    <input type="password" name="confirm_password" id="confirm_password" required>
+                                    <small></small>
+                                </div>
+                                {{!-- <span id='message'></span> --}}
+                            </div>
+                        </div>
+                        <div class="buttonBox">
+                            <span id="backToLogin">Trở lại đăng nhập</span>
+                            <input type="submit" id="btnRegistration" value="Đăng kí">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+=======
+>>>>>>> 19bff10dcedd35816ab1cf1efe5031267d535304
